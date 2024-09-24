@@ -1,0 +1,34 @@
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainColor);
+}
+
+.header_title {
+  font-size: 3rem;
+  margin: 1rem;
+  font-family: var(--titleFont);
+    color: var(--textColorOne);
+}
+
+.header_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  gap: 2rem;
+    margin: 1rem;
+}
+
+.header_nav a {
+  text-decoration: none;
+  color: var(--textColorTwo);
+  font-family: var(--bodyFont);
+  background-color: whitesmoke;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  
+}

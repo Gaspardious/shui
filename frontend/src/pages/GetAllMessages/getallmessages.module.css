@@ -1,0 +1,28 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainColor);
+  color: var(--textColorOne);
+  font-family: var(--bodyFont);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+.message h2 {
+  font-size: 2rem;
+  margin: 1rem;
+}
+

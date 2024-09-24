@@ -1,0 +1,49 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: gasparious
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: backend
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-north-1
+  iam:
+    role: arn:aws:iam::676206903081:role/Role-lambda-s3-Dynamodb
+  httpApi:
+    cors: true  
+
+
+functions:
+  getAllMessages:
+    handler: functions/GetAllMessages/index.handler
+    events:
+      - httpApi:
+          path: /messages
+          method: get
+  postMessage:
+    handler: functions/PostMessage/index.handler
+    events:
+      - httpApi:
+          path: /messages
+          method: post
+  updateMessage:
+    handler: functions/UpdateMessage/index.handler
+    events:
+      - httpApi:
+          path: /messages/{id}
+          method: put
+
+resources:
+  Resources:
+    MessagesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: MessageTable 
+        AttributeDefinitions:
+          - AttributeName: messageId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: messageId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+
