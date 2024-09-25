@@ -28,7 +28,6 @@ const GetAllMessages = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Message Board</h1>
       {error ? <p className={styles.error}>{error}</p> : null} {/* using ternary operator to conditionally render error message if error is not null */}
       <ul className={styles.messagelist}>
         {messages.length === 0 ? (
@@ -36,9 +35,9 @@ const GetAllMessages = () => {
         ) : (           // using ternary operator to conditionally render messages if messages array is not empty
           messages.map(({ messageId, date, message, username }) => (
             <li key={messageId} className={styles.message}>
-              <p>Created at: {new Date(date).toLocaleString()}</p>
-              <p>Message: {message}</p>
-              <p>Username: {username}</p>
+              <p className={styles.message_date}>Created at: {new Date(date).toLocaleString()}</p>
+              <p className={styles.message_text}>{message}</p>
+              <p className={styles.message_username}>Username: {username}</p>
             </li>
           ))
         )}
