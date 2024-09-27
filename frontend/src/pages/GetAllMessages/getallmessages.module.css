@@ -3,10 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: whitesmoke;
   padding: 2.2rem 1rem;
-  min-height: 69vh;
+  min-height: 70vh;
 }
 
 .messageList {
@@ -17,6 +16,7 @@
   width: 100%;
   overflow-y: scroll;
 }
+
 .message {
   display: flex;
   flex-direction: column;
@@ -33,6 +33,38 @@
   min-width: 300px; max-width: 400px; 
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--textColorOne);
+  color: var(--mainColor);
+  font-family: var(--bodyFont);
+  font-size: 16px;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--mainColor);
+  position: relative;
+  min-width: 300px; max-width: 400px; 
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.sortButton {
+  background-color: var(--mainColor);
+  color: var(--textColorOne);
+  font-family: var(--bodyFont);
+  font-size: 0.6rem;
+  padding: 0.2rem 0.4rem;
+  margin: 5px 5px 5px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--textColorOne);
 }
 
 .message_text {
@@ -70,48 +102,6 @@
   color: var(--mainColor);
 }
 
-.deleteButton {
-  background-color: var(--mainColor);
-  color: var(--textColorOne);
-  font-family: var(--bodyFont);
-  font-size: 0.6rem;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.editForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--mainColor);
-  color: var(--textColorOne);
-  font-family: var(--bodyFont);
-  padding: 0.5rem;
-  margin: 0rem 1rem 2rem 1rem;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  min-width: 300px; max-width: 700px; 
-  border: 1px solid var(--textColorOne);
-}
-
-.editInput {
-  font-size: 16px;
-  padding: 0.5rem;
-  text-align: center;
-  margin: 1rem;
-  border-radius: 5px;
-  color: var(--textColorTwo);
-  border: 1px solid var(--textColorOne);
-  width: 100%;
-  min-height: 80px; 
-}
 
 .editButton {
   background-color: var(--mainColor);
@@ -127,24 +117,7 @@
   bottom: 0;
   left: 0;
   border: 1px solid var(--textColorOne);
-
 }
-
-.updateButton, .cancelButton {
-  background-color: var(--textColorOne);
-  color: var(--mainColor);
-  font-family: var(--bodyFont);
-  font-size: 0.6rem;
-  padding: 0.2rem 0.4rem;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 1px solid var(--textColorOne);
-}
-
-
-
 
 .message h2 {
   font-size: 2rem;

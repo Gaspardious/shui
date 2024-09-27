@@ -6,8 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 export const handler = async (event) => {
   const body = JSON.parse(event.body);
   const messageId = uuidv4();
-
-  const date = new Date().toISOString();
+  const createdAt = new Date().toISOString();
 
   try {
     await db.put({
@@ -16,7 +15,7 @@ export const handler = async (event) => {
         messageId,    
         message: body.message,
         username: body.username,
-        date, 
+        createdAt, 
       },
     });
   } catch (error) {

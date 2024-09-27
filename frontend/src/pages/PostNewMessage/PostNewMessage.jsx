@@ -1,10 +1,12 @@
 import styles from './postnewmessage.module.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
-const PostNewMessage = () => {
+const PostNewMessage = (fetchMessages) => {
   const [message, setMessage] = useState('')
   const [username, setUsername] = useState('')
+  const navigate = useNavigate()
 
 
   async function postMessages() {
@@ -18,6 +20,10 @@ const PostNewMessage = () => {
          )
         const data = await response.json()
         console.log(data)
+
+        if(fetchMessages) {
+          fetchMessages()
+        }
       } catch (error) {
         console.error(error)
       }
@@ -27,15 +33,11 @@ const PostNewMessage = () => {
   }
 }
 
-
-
 const handleSubmit = (e) => {
   e.preventDefault(); // Prevents the form from refreshing the page
   postMessages();
+  navigate('/');
 };
-
-
-
 
   return (
     <div className={styles.container}>

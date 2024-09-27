@@ -1,0 +1,13 @@
+.deleteButton {
+    background-color: var(--mainColor);
+    color: var(--textColorOne);
+    font-family: var(--bodyFont);
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
